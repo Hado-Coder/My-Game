@@ -5,17 +5,108 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Creative Box Cutter Game</title>
     <style>
-        body {
-            margin: 0;
-            overflow: hidden;
-            background: linear-gradient(135deg, #0f2027, #203a43, #2c5364);
-            font-family: 'Poppins', sans-serif;
-            display: flex;
-            justify-content: center;
-            align-items: center;
-            height: 100vh;
-            cursor: none;
-        }
+ body {
+    margin: 0;
+    overflow: hidden;
+    font-family: 'Poppins', sans-serif;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    cursor: none;
+    background: radial-gradient(circle, rgba(15, 32, 39, 1), rgba(44, 83, 100, 1));
+}
+
+.stars {
+    position: absolute;
+    width: 100%;
+    height: 100%;
+    top: 0;
+    left: 0;
+    pointer-events: none;
+}
+
+.star {
+    position: absolute;
+    background: white;
+    border-radius: 50%;
+    opacity: 0.8;
+    animation: twinkle 1.5s infinite alternate; /* Star twinkle effect */
+}
+
+@keyframes twinkle {
+    0% {
+        opacity: 0.2;
+        transform: scale(1);
+    }
+    100% {
+        opacity: 1;
+        transform: scale(1.5);
+    }
+}
+
+.shape {
+    position: absolute;
+    border-radius: 50%;
+    opacity: 0.6;
+    animation: float 5s infinite ease-in-out;
+}
+
+@keyframes float {
+    0% {
+        transform: translateY(0) scale(1);
+    }
+    50% {
+        transform: translateY(-20px) scale(1.2);
+    }
+    100% {
+        transform: translateY(0) scale(1);
+    }
+}
+
+
+    /* Generate a lot of stars with different positions and sizes */
+    .star:nth-child(1) { top: 10%; left: 5%; width: 4px; height: 4px; animation-delay: 0s; }
+    .star:nth-child(2) { top: 15%; left: 15%; width: 6px; height: 6px; animation-delay: 0.1s; }
+    .star:nth-child(3) { top: 25%; left: 20%; width: 3px; height: 3px; animation-delay: 0.2s; }
+    .star:nth-child(4) { top: 30%; left: 40%; width: 5px; height: 5px; animation-delay: 0.3s; }
+    .star:nth-child(5) { top: 35%; left: 60%; width: 7px; height: 7px; animation-delay: 0.4s; }
+    .star:nth-child(6) { top: 45%; left: 25%; width: 8px; height: 8px; animation-delay: 0.5s; }
+    .star:nth-child(7) { top: 50%; left: 80%; width: 4px; height: 4px; animation-delay: 0.6s; }
+    .star:nth-child(8) { top: 55%; left: 10%; width: 6px; height: 6px; animation-delay: 0.7s; }
+    .star:nth-child(9) { top: 65%; left: 75%; width: 2px; height: 2px; animation-delay: 0.8s; }
+    .star:nth-child(10) { top: 70%; left: 30%; width: 5px; height: 5px; animation-delay: 0.9s; }
+    .star:nth-child(11) { top: 15%; left: 85%; width: 3px; height: 3px; animation-delay: 1s; }
+    .star:nth-child(12) { top: 20%; left: 70%; width: 4px; height: 4px; animation-delay: 1.1s; }
+    .star:nth-child(13) { top: 25%; left: 50%; width: 5px; height: 5px; animation-delay: 1.2s; }
+    .star:nth-child(14) { top: 35%; left: 90%; width: 6px; height: 6px; animation-delay: 1.3s; }
+    .star:nth-child(15) { top: 45%; left: 65%; width: 7px; height: 7px; animation-delay: 1.4s; }
+    .star:nth-child(16) { top: 55%; left: 20%; width: 4px; height: 4px; animation-delay: 1.5s; }
+    .star:nth-child(17) { top: 65%; left: 10%; width: 8px; height: 8px; animation-delay: 1.6s; }
+    .star:nth-child(18) { top: 75%; left: 80%; width: 3px; height: 3px; animation-delay: 1.7s; }
+    .star:nth-child(19) { top: 80%; left: 55%; width: 5px; height: 5px; animation-delay: 1.8s; }
+    .star:nth-child(20) { top: 10%; left: 40%; width: 6px; height: 6px; animation-delay: 1.9s; }
+    .star:nth-child(21) { top: 5%; left: 50%; width: 4px; height: 4px; animation-delay: 2s; }
+    .star:nth-child(22) { top: 12%; left: 25%; width: 3px; height: 3px; animation-delay: 2.1s; }
+    .star:nth-child(23) { top: 18%; left: 60%; width: 5px; height: 5px; animation-delay: 2.2s; }
+    .star:nth-child(24) { top: 25%; left: 80%; width: 6px; height: 6px; animation-delay: 2.3s; }
+    .star:nth-child(25) { top: 28%; left: 35%; width: 7px; height: 7px; animation-delay: 2.4s; }
+    .star:nth-child(26) { top: 30%; left: 15%; width: 8px; height: 8px; animation-delay: 2.5s; }
+    .star:nth-child(27) { top: 40%; left: 90%; width: 4px; height: 4px; animation-delay: 2.6s; }
+    .star:nth-child(28) { top: 55%; left: 5%; width: 5px; height: 5px; animation-delay: 2.7s; }
+    .star:nth-child(29) { top: 65%; left: 70%; width: 2px; height: 2px; animation-delay: 2.8s; }
+    .star:nth-child(30) { top: 75%; left: 45%; width: 3px; height: 3px; animation-delay: 2.9s; }
+    .star:nth-child(31) { top: 20%; left: 15%; width: 5px; height: 5px; animation-delay: 3s; }
+    .star:nth-child(32) { top: 30%; left: 25%; width: 3px; height: 3px; animation-delay: 3.1s; }
+    .star:nth-child(33) { top: 40%; left: 40%; width: 4px; height: 4px; animation-delay: 3.2s; }
+    .star:nth-child(34) { top: 50%; left: 50%; width: 6px; height: 6px; animation-delay: 3.3s; }
+    .star:nth-child(35) { top: 60%; left: 80%; width: 2px; height: 2px; animation-delay: 3.4s; }
+    .star:nth-child(36) { top: 70%; left: 70%; width: 4px; height: 4px; animation-delay: 3.5s; }
+    .star:nth-child(37) { top: 75%; left: 30%; width: 5px; height: 5px; animation-delay: 3.6s; }
+    .star:nth-child(38) { top: 15%; left: 35%; width: 6px; height: 6px; animation-delay: 3.7s; }
+    .star:nth-child(39) { top: 25%; left: 55%; width: 3px; height: 3px; animation-delay: 3.8s; }
+    .star:nth-child(40) { top: 35%; left: 85%; width: 7px; height: 7px; animation-delay: 3.9s; }
+
 
         #knife {
             position: absolute;
@@ -109,6 +200,50 @@
     <div id="score-board">Score: 0</div>
     <div id="game-over-text">Game Over!<br>Your Score: <span id="final-score"></span></div>
     <button id="start-button">Start Game</button>
+
+   <!-- Twinkling stars -->
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+   <div class="star"></div>
+
 
     <script>
         const startButton = document.getElementById('start-button');
@@ -220,19 +355,26 @@
         }
 
         function drawBox(box) {
-            ctx.save();
-            ctx.translate(box.x, box.y);
-            ctx.rotate((Math.PI / 180) * box.angle);
+    ctx.save();
+    ctx.translate(box.x, box.y);
+    ctx.rotate((Math.PI / 180) * box.angle);
 
-            ctx.strokeStyle = box.color;
-            ctx.lineWidth = 3;
-            ctx.strokeRect(-box.size / 2, -box.size / 2, box.size, box.size);
+    // Fill the box with color
+    ctx.fillStyle = box.color;
+    ctx.fillRect(-box.size / 2, -box.size / 2, box.size, box.size); // Fill the rectangle
 
-            ctx.fillStyle = 'rgba(255, 255, 255, 0.2)';
-            ctx.fillRect(-box.size / 2, -box.size / 2, box.size, box.size);
+    // Draw glowing border
+    ctx.strokeStyle = box.color; // Use the same color for the border
+    ctx.lineWidth = 3; // Set the border width
+    ctx.shadowColor = 'rgba(255, 255, 255, 0.8)'; // Set the glow color
+    ctx.shadowBlur = 15; // Set the blur amount for the glow
+    ctx.strokeRect(-box.size / 2, -box.size / 2, box.size, box.size); // Draw the border
 
-            ctx.restore();
-        }
+    ctx.shadowBlur = 0; // Reset shadowBlur for other drawings
+    ctx.restore();
+}
+
+
 
         function gameOver() {
             isGameRunning = false;
@@ -354,6 +496,74 @@
         });
 
         startButton.addEventListener('click', startGame);
+
+        function createStars(numStars) {
+    const starsContainer = document.createElement('div');
+    starsContainer.className = 'stars';
+    document.body.appendChild(starsContainer);
+
+    for (let i = 0; i < numStars; i++) {
+        const star = document.createElement('div');
+        star.className = 'star';
+        const size = Math.random() * 3 + 1; // Random size for stars
+        star.style.width = `${size}px`;
+        star.style.height = `${size}px`;
+        star.style.left = `${Math.random() * 100}vw`;
+        star.style.top = `${Math.random() * 100}vh`;
+        star.style.animationDuration = `${Math.random() * 2 + 1}s`; // Random twinkle duration
+        star.style.animationDelay = `${Math.random() * 5}s`; // Random delay
+        starsContainer.appendChild(star);
+    }
+}
+
+// Call the function with a moderate number of stars
+createStars(80); // Adjust the number of stars as needed
+
+box.particles.push({
+                    x: box.x,
+                    y: box.y,
+                    size: Math.random() * 5 + 2,
+                    speedY: Math.random() * -3 - 2,
+                    speedX: (Math.random() - 0.5) * 4
+                });
+
+        // Mouse event listeners
+        gameCanvas.addEventListener('mousedown', (e) => {
+            isMouseDown = true;
+            const rect = gameCanvas.getBoundingClientRect();
+            sliceBox(e.clientX - rect.left, e.clientY - rect.top);
+        });
+
+        gameCanvas.addEventListener('mouseup', () => {
+            isMouseDown = false;
+        });
+
+        gameCanvas.addEventListener('mousemove', (e) => {
+            if (isMouseDown) {
+                const rect = gameCanvas.getBoundingClientRect();
+                sliceBox(e.clientX - rect.left, e.clientY - rect.top);
+            }
+        });
+
+        // Cursor trail effect
+        gameCanvas.addEventListener('mousemove', (e) => {
+            const trail = document.createElement('div');
+            trail.className = 'cursor-trail';
+            trail.style.left = `${e.clientX}px`;
+            trail.style.top = `${e.clientY}px`;
+            document.body.appendChild(trail);
+
+            setTimeout(() => {
+                trail.remove();
+            }, 400);
+        });
+
+        // Start the game when the button is clicked
+        startButton.addEventListener('click', startGame);
+
+        // Resize the canvas on window resize
+        window.addEventListener('resize', resizeCanvas);
+
     </script>
 </body>
 </html>
